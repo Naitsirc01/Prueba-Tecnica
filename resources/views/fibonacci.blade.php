@@ -12,7 +12,7 @@
         <a href='/'>
             <button class="btn btn-primary">
                 <i class="fa-solid fa-left-long"></i>
-                Atras
+                Atrás
             </button>
         </a>
         
@@ -32,7 +32,7 @@
         <form action='/fibonacci' method='POST'>
             @csrf
             <div class="mb-3">
-                <label for="input_numero" class="form-label">Ingrese el numero para calcular la serie</label>
+                <label for="input_numero" class="form-label">Ingrese el número para calcular la serie</label>
                 <input type="number" min="0" class="form-control" id="input_numero" name="numero" placeholder="Ingrese un numero" required>
             </div>
             <button class="btn btn-primary">Calcular</button>

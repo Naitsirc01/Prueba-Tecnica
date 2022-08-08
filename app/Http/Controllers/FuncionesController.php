@@ -22,59 +22,50 @@ class FuncionesController extends Controller
         return view('sum_array');
     }
 
+    /**
+     * Calcula la serie fibonacci segun el numero ingresado
+     */
     public function calcular_fibonacci(Request $request){
         $serie=$this->sumador($request->numero,1,null);
-        /* $serie=[];
-        $num1 = 0;
-        $num2 = 1;
-        $counter = 0;
-        while ($counter < $request->numero){
-            array_push($serie,$num1);
-            $num3 = $num2 + $num1;
-            $num1 = $num2;
-            $num2 = $num3;
-            $counter = $counter + 1;
-        } */
         return view('fibonacci',compact('serie'));
     }
 
+    /**
+     * Invierte la cadena de texto ingresado
+     */
     public function invertir_texto(Request $request){
         $texto=$this->sumador(strlen($request->texto),2,$request->texto);
-        /* for ($x = 0; $x < strlen($request->texto); $x++) {
-            $char=$request->texto[$x];
-            $texto=$char.$texto;
-        } */
         return view('invertir_texto',compact('texto'));
     }
 
+    /**
+     * Multiplica los numeros ingresados
+     */
     public function multiplicar(Request $request){
         $numero_1=$request->numero1;
         $numero_2=$request->numero2;
         $resultado=$this->sumador($numero_2,3,$numero_1);
-        /* $n = $numero_1;
-        for ($x = 0; $x < $numero_2; $x++) {
-            $resultado+= $n;
-        } */
         return view('multiplicar',compact('resultado','numero_1','numero_2'));
     }
 
+    /**
+     * Suma el arreglo generado con el numero ingresado
+     */
     public function sum_array(Request $request){
         $numero=$request->numero;
-        /* $array=[];
-        for ($x = 1; $x <= $request->numero; $x++) {
-            array_push($array,$x);
-        } */
         $array=$this->sumador($numero,0,null);
         $resultado=$this->sumador(count($array),4,$array);
-        /* foreach($array as $a){
-            if($this->check_prime($a)){
-                $resultado+=$a;
-            }
-        } */
         return view('sum_array',compact('resultado','numero'));
     }
 
-    public function sumador($largo,$tipo,$numeros){
+    /**
+     * Realiza sumas de 4 formas diferentes segun los parametros ingresados, ademas de poder generar un array.
+     * @param  [int]                    $largo        [Indica la cantidad de veces que realizara la iteracion]
+     * @param  [int]                    $tipo         [Indica el tipo de suma a realizar]
+     * @param  [array/int/string/null]  $valores      [Input adicional que es requerido para los tipos 2, 3 y 4]
+     * @return [array/int/string]       $resultado    [Resultado obtenido de la operacion, este puede ser un array, numero o un texto]
+     */
+    public function sumador($largo,$tipo,$valores){
         $resultado=0;
         if($tipo==0){
             $resultado=[];
@@ -99,15 +90,15 @@ class FuncionesController extends Controller
                     $num2 = $num3;
                     break;
                 case 2://Invertir array
-                    $char=$numeros[$x];
+                    $char=$valores[$x];
                     $resultado=$char.$resultado;
                     break;
                 case 3://Multiplicacion
-                    $resultado+=$numeros;
+                    $resultado+=$valores;
                     break;
-                case 4://Suma arreglos
-                    if($this->check_prime($numeros[$x])){
-                        $resultado+=$numeros[$x];
+                case 4://Sumatoria de numeros en arreglo
+                    if($this->check_prime($valores[$x])){
+                        $resultado+=$valores[$x];
                     }
                     break;
             }
@@ -115,6 +106,9 @@ class FuncionesController extends Controller
         return $resultado;
     }
 
+    /**
+     * Chequea si el numero ingresado es primo
+     */
     public function check_prime($num){
         if ($num == 1)
         return false;

@@ -12,13 +12,13 @@
         <a href='/'>
             <button class="btn btn-primary">
                 <i class="fa-solid fa-left-long"></i>
-                Atras
+                Atrás
             </button>
         </a>
         
     </div>
     <div class="px-2 py-2 my-5 text-center">
-        <h3>Sumar arreglo</h3>
+        <h3>Sumar elementos de un arreglo</h3>
     </div>
     @if(isset($resultado))
         <div class="container py-4 mb-3 contenedor resultado">
@@ -30,8 +30,8 @@
             @csrf
             <div class="mb-3">
                 <label class="form-label">Ingrese el tamaño del arreglo</label>
-                <p>Segun el numero ingresado se creara un arreglo desde el numero 1 hasta el numero ingresado<br>
-                    Ejemplo: si ingresado es 100 el arreglo resultante sera: arreglo=[1, 2, 3, ..., 98, 99, 100]<br>
+                <p>Según el número ingresado se creara un arreglo que empieza desde el número 1 hasta el numero ingresado<br>
+                    Ejemplo: si el número ingresado es 100 el arreglo resultante será: arreglo=[1, 2, 3, ..., 98, 99, 100]<br>
                 </p>
                 @if(isset($numero))
                     <input type="number" min="1" class="form-control" id="input_numero" name="numero" placeholder="Ingrese un numero" value="{{$numero}}" required>

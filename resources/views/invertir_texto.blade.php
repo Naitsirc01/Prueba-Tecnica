@@ -4,7 +4,7 @@
         <a href='/'>
             <button class="btn btn-primary">
                 <i class="fa-solid fa-left-long"></i>
-                Atras
+                Atrás
             </button>
         </a>
         

@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
     <div class="px-4 py-5 my-5 text-center">
-        <h1>Prueba Tecnica</h1>
+        <h1>Prueba Técnica</h1>
     </div>
 
     <div class="container px-4 py-5" id="hanging-icons">
@@ -13,7 +13,7 @@
                 </div>
                 <div>
                     <h2>Fibonacci</h2>
-                    <p>Obtener la seria de Fibonacci de un numero</p>
+                    <p>Obtener la seria de Fibonacci de un número</p>
                     <a href="/fibonacci" class="btn btn-primary">
                         Fibonacci
                     </a>
@@ -39,7 +39,7 @@
                 </div>
                 <div>
                     <h2>Multiplicar</h2>
-                    <p>Obtener la multiplicacion de dos numeros</p>
+                    <p>Obtener la multiplicación de dos números</p>
                     <a href="/multiplicar" class="btn btn-primary">
                         Multiplicar
                     </a>
@@ -50,8 +50,8 @@
                     <i class="fa-brands fa-mixer"></i>
                 </div>
                 <div>
-                    <h2>Suma de numeros primos</h2>
-                    <p>Obtener la suma de un arreglo de numeros que sean primos</p>
+                    <h2>Suma de números primos</h2>
+                    <p>Obtener la suma de los números primos de un arreglo</p>
                     <a href="/sum_array" class="btn btn-primary">
                         Sumar arreglo
                     </a>
