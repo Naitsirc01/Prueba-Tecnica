@@ -44,6 +44,11 @@ class FuncionesController extends Controller
     public function multiplicar(Request $request){
         $numero_1=$request->numero1;
         $numero_2=$request->numero2;
+        //Chequeo del numero mayor para una mejor rendimiento
+        if($numero_1>$numero_2){
+            $numero_2=$request->numero1;
+            $numero_1=$request->numero2;
+        }
         $resultado=$this->sumador($numero_2,3,$numero_1);
         return view('multiplicar',compact('resultado','numero_1','numero_2'));
     }
@@ -118,5 +123,5 @@ class FuncionesController extends Controller
            return false;
         }
         return true;
-     }
+    }
 }
